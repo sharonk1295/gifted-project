@@ -8,6 +8,7 @@ const cors = require('cors');
 const PORT = process.env.PORT || 3000;
 const db = mongoose.connection;
 const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://localhost:27017/gifts';
+const giftController = require('./controllers/gifts')
 
 // DATABASE
 mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true});
@@ -17,6 +18,7 @@ db.on('open', () => {
 
 // MIDDLEWARE 
 app.use(express.json());
+app.use('/gifts', giftController)
 
 
 // LISTENER
