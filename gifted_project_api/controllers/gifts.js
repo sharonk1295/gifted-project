@@ -1,6 +1,6 @@
 const express = require('express')
-const router = express.Router
-const Gift = require('../models/gifts')
+const router = express.Router()
+const Gift = require('../models/gifts.js')
 
 //Create
 router.post('/', async (req, res) => {
