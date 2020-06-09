@@ -6,3 +6,6 @@ const giftSchema = new Schema({
     date: String,
     occasion: String
 })
+
+const Gift = model('gift', giftSchema);
+module.exports = Gift;
