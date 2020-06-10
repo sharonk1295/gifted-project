@@ -51,6 +51,7 @@ router.put('/:id', async (req, res) => {
             req.body,
             {new: true}
         )
+        res.status(200).json(updatedGift);
     }catch(error) {
         res.status(400).json(error)
     }

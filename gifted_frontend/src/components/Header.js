@@ -8,8 +8,11 @@ const Header = (props) => {
                 <h1>GIFTED</h1>
                 <nav>
                     <ul>
-                        <li>Recipients</li>
-                        <li>Gift History</li>
+                        <li>Home</li>
+                        <button onClick={() => {
+                            console.log('test')
+                            props.showHistory()
+                        }}>Gift history</button>
                         <button onClick={() => {
                             console.log('test')
                             props.showForm()

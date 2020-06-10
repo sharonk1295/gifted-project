@@ -2,11 +2,8 @@ import React from 'react';
 import '../css/style.scss';
 
 const History = (props) => {
-    const [ formData, setFormData] = React.useState(props.initial);
-    
-    React.useEffect(() => {
-        setFormData(props.initial);
-    }, [props.initial]);
+
+    const gift = props.gifts;
 
     return (
         <div>
