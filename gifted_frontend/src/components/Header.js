@@ -10,7 +10,10 @@ const Header = (props) => {
                     <ul>
                         <li>Recipients</li>
                         <li>Gift History</li>
-                        <li>Add Gift</li>
+                        <button onClick={() => {
+                            console.log('test')
+                            props.showForm()
+                        }}>Add Recipient</button>
                     </ul>
                 </nav>
             </div>
