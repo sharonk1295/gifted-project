@@ -3,6 +3,7 @@ import "../css/style.scss";
 
 import Header from './Header';
 import Form from './Create_Edit_form';
+import History from './Gift_History';
 
 const App = (props) => {
 
@@ -12,6 +13,12 @@ const App = (props) => {
   const [formToggle, setFormToggle] = React.useState(false);
   const addRecipientForm = () => {
     setFormToggle(!formToggle);
+  }
+
+  // Use to show gift history
+  const [historyToggle, setHistoryToggle] = React.useState(false);
+  const showHistory = () => {
+    setHistoryToggle(!historyToggle);
   }
 
 
@@ -49,9 +56,21 @@ const App = (props) => {
 
   return (
     <>
-      <Header showForm= {addRecipientForm} />
+      <Header showForm= {addRecipientForm} showHistory={showHistory}/>
+      {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : ''}
+      {historyToggle ? <History gifts={recipients} /> : ''}
     </>
   )
 }
 
 export default App;
+
+{/* <ul>
+{recipients ? recipients.map((recipient) => {
+  return (
+    <li key={recipient._id}>
+      <h3>{recipient.recipient}</h3>
+    </li>
+  )
+}) : "Searching for your recipients..."}
+</ul> */}

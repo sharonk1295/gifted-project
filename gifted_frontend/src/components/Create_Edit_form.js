@@ -32,7 +32,15 @@ const Form = (props) => {
             name="occasion" 
             value={formData.occasion} 
             onChange={handleChange}/>
-            <input type="submit"></input>
+            {/* <input onClick={props.handleCreate(formData)} type="submit"></input> */}
+            <button
+                onClick={() => {
+                    props.handleSubmit(formData);
+                    setFormData(props.initial);
+                }}
+            >
+                SUBMIT
+            </button>
         </form>
     )
 }
