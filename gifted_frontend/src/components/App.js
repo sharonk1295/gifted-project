@@ -4,6 +4,7 @@ import "../css/style.scss";
 import Header from './Header';
 
 const App = (props) => {
+  
   return (
     <>
       <Header />
