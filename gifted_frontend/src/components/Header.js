@@ -2,13 +2,17 @@ import React from 'react';
 import '../css/style.scss';
 
 const Header = (props) => {
+
     return (
         <div className="jumbotron jumbotron-fluid">
             <div className="container-fluid">
                 <h1>GIFTED</h1>
                 <nav>
                     <ul>
-                        <li>Home</li>
+                        <button onClick={() => {
+                            console.log('test')
+                            props.hideHome()
+                        }}>Home</button>
                         <button onClick={() => {
                             console.log('test')
                             props.showHistory()
