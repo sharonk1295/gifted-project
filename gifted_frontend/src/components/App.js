@@ -57,20 +57,31 @@ const App = (props) => {
   return (
     <>
       <Header showForm= {addRecipientForm} showHistory={showHistory}/>
-      {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : ''}
-      {historyToggle ? <History gifts={recipients} /> : ''}
+      {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : 
+      <ul>
+        {recipients ? recipients.map((recipient) => {
+          return (
+            <li key={recipient._id}>
+              <h3>{recipient.recipient}</h3>
+            </li>
+          )
+        }) : "Searching for your recipients..."}
+      </ul>}
+      {historyToggle ? <History gifts={recipients} /> 
+      :
+      <ul>
+        {recipients ? recipients.map((recipient) => {
+          return (
+            <li key={recipient._id}>
+              <h3>{recipient.recipient}</h3>
+            </li>
+          )
+        }) : "Searching for your recipients..."}
+      </ul>}
     </>
   )
 }
 
 export default App;
 
-{/* <ul>
-{recipients ? recipients.map((recipient) => {
-  return (
-    <li key={recipient._id}>
-      <h3>{recipient.recipient}</h3>
-    </li>
-  )
-}) : "Searching for your recipients..."}
-</ul> */}
+
