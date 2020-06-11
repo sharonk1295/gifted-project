@@ -15,19 +15,24 @@ const App = (props) => {
   // Use to render Form from our navbar
   const [formToggle, setFormToggle] = React.useState(false);
   const addRecipientForm = () => {
-    setFormToggle(!formToggle);
+    setFormToggle(true);
+    setHistoryToggle(false);
+    setHomeToggle(false)
   }
 
   // Use to show gift history
   const [historyToggle, setHistoryToggle] = React.useState(false);
   const showHistory = () => {
-    setHistoryToggle(!historyToggle);
+    setHistoryToggle(true);
+    setFormToggle(false);
+    setHomeToggle(false)
   }
 
   // Home button
   const [homeToggle, setHomeToggle] = React.useState(true);
-  const hideHome = () => {
-    setHomeToggle(!homeToggle);
+  const showHome = () => {
+    setHistoryToggle(false);
+    setFormToggle(false);
   }
 
   const blank = {
@@ -59,16 +64,10 @@ const App = (props) => {
   }
   const showPage = () => {
     if (homeToggle) {
-      setFormToggle(formToggle === false);
-      setHistoryToggle(historyToggle ===false);
       return <Recipient recipient={recipients}/>
   } else if (historyToggle) {
-      setHomeToggle(homeToggle ===false);
-      setFormToggle(formToggle ===false);
       return <History gifts={recipients}/>
   } else if (formToggle) {
-      setHomeToggle(homeToggle ===false);
-      setHistoryToggle(historyToggle === false);
       return <Form initial={blank} handleSubmit={handleCreate}/>
   } else {
       return <Recipient recipient={recipients}/>
@@ -80,30 +79,13 @@ const App = (props) => {
 
   return (
     <>
-      <Header showForm= {addRecipientForm} showHistory={showHistory} hideHome={hideHome}/>
+      <Header showForm= {addRecipientForm} showHistory={showHistory} showHome={showHome}/>
       {/* {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : 
       ''}
       {historyToggle ? <History gifts={recipients} /> 
       :
       <Recipient recipient={recipients}/>} */}
       {showPage()}
-      {/* {(() => {
-        if (homeToggle) {
-          setFormToggle(formToggle === false);
-          setHistoryToggle(historyToggle ===false);
-          return <Recipient recipient={recipients}/>
-      } else if (historyToggle) {
-          setHomeToggle(homeToggle ===false);
-          setFormToggle(formToggle ===false);
-          return <History gifts={recipients}/>
-      } else if (formToggle) {
-          setHomeToggle(homeToggle ===false);
-          setHistoryToggle(historyToggle === false);
-          return <Form initial={blank} handleSubmit={handleCreate}/>
-      } else {
-          return <Recipient recipient={recipients}/>
-        }
-      })()} */}
     </>
   )
 }
