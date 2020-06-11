@@ -12,6 +12,9 @@ const Recipient = (props) => {
                     return(
                         <li key ={recipient._id}>
                             <h1>{recipient.recipient}</h1>
+                            <button onClick={()=> {
+                            props.handleDelete(recipient._id)
+                        }}>Delete</button>
                         </li>
                     )
                 }): 'loading recipient'}
