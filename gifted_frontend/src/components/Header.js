@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/style.scss';
 
 const Header = (props) => {
+
     return (
         <div className="jumbotron jumbotron-fluid">
             <div className="container-fluid">
