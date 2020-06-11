@@ -7,69 +7,71 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
 .home-page {
     background-color: black;
     height: 100vh;
     display: flex;
     justify-content: center;
-}
-.home-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-h1 {
-    color: whitesmoke;
-    font-size: 110px;
-    font-family: 'Poiret One', cursive;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin: 5px auto;
-    padding: 10px 60px;
-    border: whitesmoke double 4px;
-    text-shadow: 4px 4px gray;
-}
-@keyframes spin {
-    0% {
-        transform: perspective(400px) rotateY(0)
+   .home-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;    
+        h1 {
+        color: whitesmoke;
+        font-size: 110px;
+        font-family: 'Poiret One', cursive;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin: 5px auto;
+        padding: 10px 60px;
+        border: whitesmoke double 4px;
+        text-shadow: 4px 4px gray;
+        };
+        @keyframes spin {
+            0% {
+                transform: perspective(400px) rotateY(0)
+            }
+            100% {
+                transform: perspective(400px) rotateY(180deg);
+            }
+        };
+        .gift-image {
+            margin: 6vh;
+            text-align: center;
+            .img {
+                width: 65%;
+                text-align: center;
+                filter: invert(100%);
+                animation-name: spin;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                animation-duration: 3s;
+            }
+        };    
+        p {
+            color: rgba(245, 245, 245, 0.89);
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            letter-spacing: 0.5px;
+        };
+        button {
+            padding: 9px 12px;
+            background-color: whitesmoke;
+            font-size: 18px;
+            outline: none;
+            border: none;
+            border-radius: 3px;
+            font-family: 'Poiret One', cursive;
+            letter-spacing: 1px;
+            font-weight: 600;
+        };
+        button:hover {
+            background-color: rgba(231, 120, 56, 0.76);
+            color: whitesmoke;
+            transform: scale(1.4, 1.4);
+        }
     }
-    100% {
-        transform: perspective(400px) rotateY(180deg);
-    }
-}
-.gift-image {
-    margin: 6vh;
-    text-align: center;
-}
-.img {
-    width: 65%;
-    text-align: center;
-    filter: invert(100%);
-    animation-name: spin;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-duration: 3s;
-}
-p {
-    color: rgba(245, 245, 245, 0.89);
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    letter-spacing: 0.5px;
-}
-button {
-    padding: 9px 12px;
-    background-color: whitesmoke;
-    font-size: 18px;
-    outline: none;
-    border: none;
-    border-radius: 3px;
-    font-family: 'Poiret One', cursive;
-    letter-spacing: 1px;
-    font-weight: 600;
-}
-button:hover {
-    background-color: rgba(231, 120, 56, 0.76);
-    color: whitesmoke;
-    transform: scale(1.4, 1.4);
 }
