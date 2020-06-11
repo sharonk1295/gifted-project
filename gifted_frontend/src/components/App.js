@@ -72,6 +72,17 @@ const App = (props) => {
     getInfo()
   }
 
+  const handleUpdate = async (id)  => {
+    const response = await fetch(`http://localhost:3000/gifts/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(recipient)
+    })
+    getInfo();
+  }
+
 
   // const showPage = () => {
   //   if (homeToggle) {
@@ -97,11 +108,14 @@ const App = (props) => {
   return (
     <>
       <Header showForm= {addRecipientForm} showHistory={showHistory} hideHome={hideHome}/>
-      {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : 
-      ''}
+      {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : ''}
       {historyToggle ? <History gifts={recipients}/> 
       :
       homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete}/> : ''}
+      {historyToggle ? <History gifts={recipients}/> 
+      :
+      homeToggle? <Recipient recipient={recipients} handleUpdate={handleUpdate}/> : ''}
+    
       {/* {showPage()} */}
       {/* {(() => {
         if (homeToggle) {
