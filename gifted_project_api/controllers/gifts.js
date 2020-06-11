@@ -23,6 +23,16 @@ router.get('/', async (req, res) => {
     }
 })
 
+//Get by recipient
+router.get('/:recipient', async (req, res) => {
+    try{
+        const gifts = await Gift.find({recipient: req.params.recipient})
+        res.status(200).json(gifts)
+    }catch(error){
+        res.status(400).json(error)
+    }
+})
+
 //Delete
 router.delete('/:id', async (req, res) => {
     try{
@@ -41,6 +51,7 @@ router.put('/:id', async (req, res) => {
             req.body,
             {new: true}
         )
+        res.status(200).json(updatedGift);
     }catch(error) {
         res.status(400).json(error)
     }
