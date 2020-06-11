@@ -89,28 +89,6 @@ const App = (props) => {
     getInfo()
   }
 
-
-  // const showPage = () => {
-  //   if (homeToggle) {
-  //     setFormToggle(formToggle === false);
-  //     setHistoryToggle(historyToggle ===false);
-  //     return <Recipient recipient={recipients}/>
-  // } else if (historyToggle) {
-  //     setHomeToggle(homeToggle ===false);
-  //     setFormToggle(formToggle ===false);
-  //     return <History gifts={recipients}/>
-  // } else if (formToggle) {
-  //     setHomeToggle(homeToggle ===false);
-  //     setHistoryToggle(historyToggle === false);
-  //     return <Form initial={blank} handleSubmit={handleCreate}/>
-  // } else {
-  //     return <Recipient recipient={recipients}/>
-  //   }
-  // }
-  // React.useEffect(() => {
-  //   showPage();
-  // }, []);
-
   return splash ? <Splash hideSplash={hideSplash} /> : (
     <>
       <Header showForm= {addRecipientForm} showHistory={showHistory} showHome={showHome}/>
@@ -119,28 +97,8 @@ const App = (props) => {
       {historyToggle ? <History gifts={recipients}/> 
       :
       homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete}/> : ''}
-      {/* {showPage()} */}
-      {/* {(() => {
-        if (homeToggle) {
-          setFormToggle(formToggle === false);
-          setHistoryToggle(historyToggle ===false);
-          return <Recipient recipient={recipients}/>
-      } else if (historyToggle) {
-          setHomeToggle(homeToggle ===false);
-          setFormToggle(formToggle ===false);
-          return <History gifts={recipients}/>
-      } else if (formToggle) {
-          setHomeToggle(homeToggle ===false);
-          setHistoryToggle(historyToggle === false);
-          return <Form initial={blank} handleSubmit={handleCreate}/>
-      } else {
-          return <Recipient recipient={recipients}/>
-        }
-      })()} */}
     </>
   )
 }
 
 export default App;
-
-
