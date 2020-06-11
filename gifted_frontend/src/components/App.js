@@ -64,6 +64,15 @@ const App = (props) => {
     })
     getInfo();
   }
+
+  const handleDelete = async (id) => {
+    const response = await fetch(`http://localhost:3000/gifts/${id}`, {
+      method: 'DELETE'
+    })
+    getInfo()
+  }
+
+
   // const showPage = () => {
   //   if (homeToggle) {
   //     setFormToggle(formToggle === false);
@@ -90,9 +99,9 @@ const App = (props) => {
       <Header showForm= {addRecipientForm} showHistory={showHistory} hideHome={hideHome}/>
       {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : 
       ''}
-      {historyToggle ? <History gifts={recipients} /> 
+      {historyToggle ? <History gifts={recipients}/> 
       :
-      homeToggle? <Recipient recipient={recipients}/> : ''}
+      homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete}/> : ''}
       {/* {showPage()} */}
       {/* {(() => {
         if (homeToggle) {
