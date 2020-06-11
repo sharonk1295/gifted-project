@@ -5,6 +5,7 @@ import Header from './Header';
 import Form from './Create_Edit_form';
 import History from './Gift_History';
 import Recipient from './Recipient';
+import Splash from './Splash';
 
 const App = (props) => {
 
@@ -29,11 +30,28 @@ const App = (props) => {
   }
 
   // Home button
-  const [homeToggle, setHomeToggle] = React.useState(true);
+  // const [homeToggle, setHomeToggle] = React.useState(true);
+  // const showHome = () => {
+  //   setHistoryToggle(false);
+  //   setFormToggle(false);
+  // }
+
+  // For testing splash
+  const [homeToggle, setHomeToggle] = React.useState(false);
   const showHome = () => {
+    setHomeToggle(true);
     setHistoryToggle(false);
     setFormToggle(false);
   }
+
+  // For Splash page
+  const [splash, setSplash] = React.useState(true);
+  const hideSplash = () => {
+    setSplash(false);
+    setHomeToggle(true)
+  }
+  
+
 
   const blank = {
     recipient: '',
@@ -77,7 +95,7 @@ const App = (props) => {
     showPage();
   }, []);
 
-  return (
+  return splash ? <Splash hideSplash={hideSplash} /> : (
     <>
       <Header showForm= {addRecipientForm} showHistory={showHistory} showHome={showHome}/>
       {/* {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : 
