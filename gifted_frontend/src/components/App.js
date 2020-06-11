@@ -4,21 +4,26 @@ import "../css/style.scss";
 import Header from './Header';
 import Form from './Create_Edit_form';
 import History from './Gift_History';
+import Recipient from './Recipient';
 
 const App = (props) => {
 
   const [recipients, setRecipients] = React.useState();
 
+  //const [page, setPage] = React.useState()
+
   // Use to render Form from our navbar
   const [formToggle, setFormToggle] = React.useState(false);
   const addRecipientForm = () => {
     setFormToggle(!formToggle);
+    setHistoryToggle(!historyToggle)
   }
 
   // Use to show gift history
   const [historyToggle, setHistoryToggle] = React.useState(false);
   const showHistory = () => {
     setHistoryToggle(!historyToggle);
+    setFormToggle(!formToggle);
   }
 
 
@@ -50,34 +55,15 @@ const App = (props) => {
     getInfo();
   }
 
-  // const show = () => {
-  //   return <Form />
-  // }
 
   return (
     <>
       <Header showForm= {addRecipientForm} showHistory={showHistory}/>
       {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : 
-      <ul>
-        {recipients ? recipients.map((recipient) => {
-          return (
-            <li key={recipient._id}>
-              <h3>{recipient.recipient}</h3>
-            </li>
-          )
-        }) : "Searching for your recipients..."}
-      </ul>}
+      ''}
       {historyToggle ? <History gifts={recipients} /> 
       :
-      <ul>
-        {recipients ? recipients.map((recipient) => {
-          return (
-            <li key={recipient._id}>
-              <h3>{recipient.recipient}</h3>
-            </li>
-          )
-        }) : "Searching for your recipients..."}
-      </ul>}
+      <Recipient recipient={recipients}/>}
     </>
   )
 }
