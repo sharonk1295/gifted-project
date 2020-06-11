@@ -26,6 +26,9 @@ const App = (props) => {
     setFormToggle(!formToggle);
   }
 
+  // Home button
+  const [homeToggle, setHomeToggle] = React.useState(true);
+  const hide
 
   const blank = {
     recipient: '',
