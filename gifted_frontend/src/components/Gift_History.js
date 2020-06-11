@@ -12,9 +12,6 @@ const History = (props) => {
                     return(
                         <li key ={gift._id}>
                             <h1>{gift.gift}</h1>
-                            <button onClick={()=> {
-                            props.handleDelete(gift._id)
-                        }}>Delete</button>
                         </li>
                     )
                 }): 'loading gifts'}

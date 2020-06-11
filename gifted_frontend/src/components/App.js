@@ -99,7 +99,7 @@ const App = (props) => {
       <Header showForm= {addRecipientForm} showHistory={showHistory} hideHome={hideHome}/>
       {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : 
       ''}
-      {historyToggle ? <History gifts={recipients} handleDelete={handleDelete}/> 
+      {historyToggle ? <History gifts={recipients}/> 
       :
       homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete}/> : ''}
       {/* {showPage()} */}
