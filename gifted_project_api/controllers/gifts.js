@@ -23,9 +23,9 @@ router.get('/', async (req, res) => {
     }
 })
 
-//Get Recipient 
-router.get('/:recipient', async (req,res)=> {
-    try {
+//Get by recipient
+router.get('/:recipient', async (req, res) => {
+    try{
         const gifts = await Gift.find({recipient: req.params.recipient})
         res.status(200).json(gifts)
     }catch(error){
