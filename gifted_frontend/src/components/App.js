@@ -1,6 +1,5 @@
 import React from "react";
 import "../css/style.scss";
-// import Form from '../components/Create_Edit_form'
 
 import Header from './Header';
 import Form from './Create_Edit_form';
@@ -19,7 +18,6 @@ const App = (props) => {
 });
 
 
-  //const [page, setPage] = React.useState()
 
   // Use to render Form from our navbar
   const [formToggle, setFormToggle] = React.useState(false);
@@ -37,8 +35,6 @@ const App = (props) => {
     setHomeToggle(false)
   }
 
- 
-
   // For testing splash
   const [homeToggle, setHomeToggle] = React.useState(false);
   const showHome = () => {
@@ -53,8 +49,6 @@ const App = (props) => {
     setSplash(false);
     setHomeToggle(true)
   }
-  
-
 
   const blank = {
     recipient: '',
@@ -83,19 +77,9 @@ const App = (props) => {
     })
     getInfo();
   }
-  const showPage = () => {
-    if (homeToggle) {
-      return <Recipient recipient={recipients}/>
-  } else if (historyToggle) {
-      return <History gifts={recipients}/>
-  } else if (formToggle) {
-      return <Form initial={blank} handleSubmit={handleCreate}/>
-  } else {
-      return <Recipient recipient={recipients}/>
-    }
-  }
 
   const handleDelete = async (id) => {
+<<<<<<< HEAD
     const response = await fetch(`http://localhost:3000/gifts/${id}`, {
       method: 'DELETE'
     })
@@ -109,17 +93,36 @@ const App = (props) => {
 };
 
   const handleUpdate = async (id)  => {
+=======
+>>>>>>> c0aea36d093adb5b4837f9a48c1bdf25a3076064
     const response = await fetch(`http://localhost:3000/gifts/${id}`, {
+      method: 'DELETE'
+    })
+    getInfo()
+  }
+
+  const handleUpdate = async (data)  => {
+    console.log(data)
+    const response = await fetch(`http://localhost:3000/gifts/${data._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
+<<<<<<< HEAD
       body: JSON.stringify(id)
+=======
+      body: JSON.stringify(data)
+>>>>>>> c0aea36d093adb5b4837f9a48c1bdf25a3076064
     })
-    getInfo();
+    // getInfo();
   }
 
-
+  // const updateData = {
+  //   recipient: '',
+  //   gift: '',
+  //   date: '',
+  //   occasion:''
+  // }
 
   return splash ? <Splash hideSplash={hideSplash} /> : (
     <>
@@ -127,11 +130,13 @@ const App = (props) => {
       {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : ''}
       {historyToggle ? <History gifts={recipients}/>
       :
+<<<<<<< HEAD
       homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete} handleSelect = {handleSelect} handleUpdate = {handleUpdate}/> : ''}
+=======
+      homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete} handleUpdate={handleUpdate}/> : ''}
+>>>>>>> c0aea36d093adb5b4837f9a48c1bdf25a3076064
     </>
   )
 }
 
 export default App;
-
-
