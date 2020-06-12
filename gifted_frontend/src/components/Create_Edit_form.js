@@ -11,7 +11,7 @@ const Form = (props) => {
         setFormData({...formData, [event.target.name]: event.target.value})
     }
     return (
-        <form onSubmit={() => {props.handleSubmit(formData)}}>
+        <form onSubmit={() => {props.handleSubmit(formData)}} className="form">
             <label>Recipient</label>
             <input 
             type="text" 

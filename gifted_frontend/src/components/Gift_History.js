@@ -13,6 +13,7 @@ const History = (props) => {
                     return(
                         <li key ={gift._id}>
                             <h1>{gift.gift}</h1>
+                            <h5>Given to {gift.recipient} on {gift.date} for {gift.occasion}</h5>
                         </li>
                     )
                 }): 'loading gifts'}
@@ -26,4 +27,3 @@ const History = (props) => {
 
 
 export default History;
-
