@@ -2,6 +2,11 @@ import React from 'react';
 import '../css/style.scss';
 
 const Recipient = (props) => {
+    const [formData, setFormData] = React.useState(props.initial)
+
+    React.useEffect(() => {
+        setFormData(props.initial)
+    }, [props.initial])
 
     const recipient = props.recipient;
 
@@ -14,9 +19,10 @@ const Recipient = (props) => {
                             <h1>{recipient.recipient}</h1>
                             <button onClick={()=> {
                             props.handleDelete(recipient._id)
-                        }}>Delete</button>
+                            }}>Delete</button>
                             <button onClick={()=> {
                             props.handleUpdate(recipient._id)
+                            setFormData(props.initial)
                             }}>Update</button>
                         </li>
                     )

@@ -42,7 +42,6 @@ const App = (props) => {
     setSplash(false);
     setHomeToggle(true)
   }
-  
 
   const blank = {
     recipient: '',
@@ -90,13 +89,20 @@ const App = (props) => {
     getInfo();
   }
 
+  // const updateData = {
+  //   recipient: '',
+  //   gift: '',
+  //   date: '',
+  //   occasion:''
+  // }
+
   return splash ? <Splash hideSplash={hideSplash} /> : (
     <>
       <Header showForm= {addRecipientForm} showHistory={showHistory} showHome={showHome}/>
       {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : ''}
       {historyToggle ? <History gifts={recipients}/>
       :
-      homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete} handleUpdate={handleUpdate}/> : ''}
+      homeToggle? <Recipient data={updateData} recipient={recipients} handleDelete={handleDelete} handleUpdate={handleUpdate}/> : ''}
     </>
   )
 }
