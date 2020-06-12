@@ -75,27 +75,10 @@ const App = (props) => {
       },
       body: JSON.stringify(recipient)
     })
-    // getInfo();
-    hideSplash()
+    getInfo();
   }
 
   const handleDelete = async (id) => {
-<<<<<<< HEAD
-    const response = await fetch(`http://localhost:3000/gifts/${id}`, {
-      method: 'DELETE'
-    })
-    getInfo()
-  }
-
-  const handleEdit = async (editedRecipient) => {
-    render 
-    setEditRecipients(editedRecipient);
-   
-};
-
-  const handleUpdate = async (id)  => {
-=======
->>>>>>> c0aea36d093adb5b4837f9a48c1bdf25a3076064
     const response = await fetch(`http://localhost:3000/gifts/${id}`, {
       method: 'DELETE'
     })
@@ -109,15 +92,9 @@ const App = (props) => {
       headers: {
         'Content-Type': 'application/json'
       },
-<<<<<<< HEAD
-      body: JSON.stringify(id)
-=======
       body: JSON.stringify(data)
->>>>>>> c0aea36d093adb5b4837f9a48c1bdf25a3076064
     })
-    console.log(data)
     // getInfo();
-    
   }
 
   // const updateData = {
@@ -133,11 +110,7 @@ const App = (props) => {
       {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : ''}
       {historyToggle ? <History gifts={recipients}/>
       :
-<<<<<<< HEAD
-      homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete} handleSelect = {handleSelect} handleUpdate = {handleUpdate}/> : ''}
-=======
       homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete} handleUpdate={handleUpdate}/> : ''}
->>>>>>> c0aea36d093adb5b4837f9a48c1bdf25a3076064
     </>
   )
 }

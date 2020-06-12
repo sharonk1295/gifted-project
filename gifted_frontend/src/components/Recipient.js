@@ -18,12 +18,12 @@ const Recipient = (props) => {
         
     }
 
-    // const formData = {
-    //     recipient: '',
-    //     gift: '',
-    //     date: '',
-    //     occasion:''
-    //   }
+    const formData = {
+        recipient: '',
+        gift: '',
+        date: '',
+        occasion:''
+      }
 
     return (
         <div className="recipients-page">
@@ -38,16 +38,10 @@ const Recipient = (props) => {
                             <button className="delete-btn" onClick={()=> {
                             props.handleDelete(recipient._id)
                         }}>Delete</button>
-<<<<<<< HEAD
-                            <button onClick={()=> {
-                            props.handleSelect(recipient._id)
-                            }}>Edit</button>
-=======
                             <button onClick={() => {
                             handleSelect(recipient)}
                             }
                         >Update</button>
->>>>>>> c0aea36d093adb5b4837f9a48c1bdf25a3076064
                         </li>
                 )})
                 : 'loading recipient'}
