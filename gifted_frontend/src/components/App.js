@@ -1,6 +1,5 @@
 import React from "react";
 import "../css/style.scss";
-// import Form from '../components/Create_Edit_form'
 
 import Header from './Header';
 import Form from './Create_Edit_form';
@@ -12,7 +11,6 @@ const App = (props) => {
 
   const [recipients, setRecipients] = React.useState();
 
-  //const [page, setPage] = React.useState()
 
   // Use to render Form from our navbar
   const [formToggle, setFormToggle] = React.useState(false);
@@ -30,8 +28,6 @@ const App = (props) => {
     setHomeToggle(false)
   }
 
- 
-
   // For testing splash
   const [homeToggle, setHomeToggle] = React.useState(false);
   const showHome = () => {
@@ -47,7 +43,6 @@ const App = (props) => {
     setHomeToggle(true)
   }
   
-
 
   const blank = {
     recipient: '',
@@ -94,8 +89,6 @@ const App = (props) => {
     })
     getInfo();
   }
-
-
 
   return splash ? <Splash hideSplash={hideSplash} /> : (
     <>

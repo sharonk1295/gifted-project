@@ -1,75 +1,125 @@
 @import url('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">');
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Poiret+One');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Poiret+One&family=Cookie');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+// ======= SPLASH PAGE ======== // 
 .home-page {
     background-color: black;
     height: 100vh;
     display: flex;
     justify-content: center;
-}
-.home-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-h1 {
-    color: whitesmoke;
-    font-size: 110px;
-    font-family: 'Poiret One', cursive;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin: 5px auto;
-    padding: 10px 60px;
-    border: whitesmoke double 4px;
-    text-shadow: 4px 4px gray;
-}
-@keyframes spin {
-    0% {
-        transform: perspective(400px) rotateY(0)
+   .home-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;    
+        h1 {
+        color: whitesmoke;
+        font-size: 110px;
+        font-family: 'Poiret One', cursive;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin: 5px auto;
+        padding: 10px 60px;
+        border: whitesmoke double 4px;
+        text-shadow: 4px 4px gray;
+        };
+        @keyframes spin {
+            0% {
+                transform: perspective(400px) rotateY(0)
+            }
+            100% {
+                transform: perspective(400px) rotateY(180deg);
+            }
+        };
+        .gift-image {
+            margin: 6vh;
+            text-align: center;
+            .img {
+                width: 65%;
+                text-align: center;
+                // filter: invert(100%);
+                animation-name: spin;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                animation-duration: 3s;
+            }
+        };    
+        p {
+            color: rgba(245, 245, 245, 0.89);
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            letter-spacing: 0.5px;
+        };
+        button {
+            padding: 9px 12px;
+            background-color: whitesmoke;
+            font-size: 18px;
+            outline: none;
+            border: none;
+            border-radius: 3px;
+            font-family: 'Poiret One', cursive;
+            letter-spacing: 1px;
+            font-weight: 600;
+        };
+        button:hover {
+            background-color: rgba(42, 108, 196, 0.76);
+            color: whitesmoke;
+            transform: scale(1.4, 1.4);
+        }
     }
-    100% {
-        transform: perspective(400px) rotateY(180deg);
+}
+
+// ========= JUMBOTRON ========== //
+.jumbotron {
+    background-image: url('../css/hero_img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    .container-fluid {
+        margin-left: 5vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // align-items: center;
+        h1 {
+        color: rgb(85, 84, 84);
+        font-size: 120px;
+        font-family: 'Poiret One', cursive;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-shadow: 4px 4px gray;
+        };
+        nav {
+            display: flex;
+            ul {
+                margin-left: 2vh;
+                button {
+                    margin: 4px;
+                    padding: 4px 6px;
+                    background: rgb(15,55,121);
+                    background: linear-gradient(0deg, rgba(15,55,121,1) 0%, rgba(199,210,218,1) 83%);
+                    outline: none;
+                    border: white 2px solid;
+                    color: whitesmoke;
+                    letter-spacing: 1px;
+                    font-family: 'Cookie', cursive;
+                    font-size: 20px;
+                };
+                button:hover {
+                    background: rgb(236,239,242);
+                    background: linear-gradient(0deg, rgba(236,239,242,1) 0%, rgba(10,57,91,1) 83%);
+                    border: black 2px solid;
+                }
+            }
+        };
+
     }
-}
-.gift-image {
-    margin: 6vh;
-    text-align: center;
-}
-.img {
-    width: 65%;
-    text-align: center;
-    filter: invert(100%);
-    animation-name: spin;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-duration: 3s;
-}
-p {
-    color: rgba(245, 245, 245, 0.89);
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    letter-spacing: 0.5px;
-}
-button {
-    padding: 9px 12px;
-    background-color: whitesmoke;
-    font-size: 18px;
-    outline: none;
-    border: none;
-    border-radius: 3px;
-    font-family: 'Poiret One', cursive;
-    letter-spacing: 1px;
-    font-weight: 600;
-}
-button:hover {
-    background-color: rgba(231, 120, 56, 0.76);
-    color: whitesmoke;
-    transform: scale(1.4, 1.4);
 }
