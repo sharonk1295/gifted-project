@@ -89,6 +89,7 @@ const App = (props) => {
       body: JSON.stringify(data)
     })
     // getInfo();
+    
   }
 
   return splash ? <Splash hideSplash={hideSplash} /> : (
