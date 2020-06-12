@@ -7,7 +7,7 @@ const History = (props) => {
 
     return (
         <div className="gift-history">
-            <h1>View the Gifts You've Ever Given</h1>
+            <h1>View All the Gifts You've Ever Given</h1>
             <ol>
                 {gift ? gift.map((gift)=> {
                     return(

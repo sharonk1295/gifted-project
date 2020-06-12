@@ -75,7 +75,8 @@ const App = (props) => {
       },
       body: JSON.stringify(recipient)
     })
-    getInfo();
+    // getInfo();
+    hideSplash()
   }
 
   const handleDelete = async (id) => {
@@ -114,7 +115,9 @@ const App = (props) => {
       body: JSON.stringify(data)
 >>>>>>> c0aea36d093adb5b4837f9a48c1bdf25a3076064
     })
+    console.log(data)
     // getInfo();
+    
   }
 
   // const updateData = {
