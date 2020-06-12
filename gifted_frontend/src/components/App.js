@@ -103,7 +103,7 @@ const App = (props) => {
       {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : ''}
       {historyToggle ? <History gifts={recipients}/>
       :
-      homeToggle? <Recipient data={updateData} recipient={recipients} handleDelete={handleDelete} handleUpdate={handleUpdate}/> : ''}
+      homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete} handleUpdate={handleUpdate}/> : ''}
     </>
   )
 }
