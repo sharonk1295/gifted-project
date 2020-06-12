@@ -28,7 +28,7 @@ const Recipient = (props) => {
 
     return (
         <div>
-            {editGift.recipient ? <Form handleSubmit={props.handleUpdate} initial={formData}/> : ''}
+            {editGift.recipient ? <Form handleSubmit={props.handleUpdate} initial={editGift}/> : ''}
             <ul>
                 {recipient ? recipient.map((recipient)=> {
                     return(

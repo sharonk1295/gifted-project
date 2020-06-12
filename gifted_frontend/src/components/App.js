@@ -79,15 +79,16 @@ const App = (props) => {
     getInfo()
   }
 
-  const handleUpdate = async (id)  => {
-    const response = await fetch(`http://localhost:3000/gifts/${id}`, {
+  const handleUpdate = async (data)  => {
+    console.log(data)
+    const response = await fetch(`http://localhost:3000/gifts/${data._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(id)
+      body: JSON.stringify(data)
     })
-    getInfo();
+    // getInfo();
   }
 
   return splash ? <Splash hideSplash={hideSplash} /> : (
