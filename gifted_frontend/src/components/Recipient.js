@@ -19,12 +19,12 @@ const Recipient = (props) => {
         
     }
 
-    const formData = {
-        recipient: '',
-        gift: '',
-        date: '',
-        occasion:''
-      }
+    // const formData = {
+    //     recipient: '',
+    //     gift: '',
+    //     date: '',
+    //     occasion:''
+    //   }
 
     return (
         <div>

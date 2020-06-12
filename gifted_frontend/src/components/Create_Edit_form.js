@@ -40,7 +40,7 @@ const Form = (props) => {
             <button
                 onClick={() => {
                     props.handleSubmit(formData);
-                    setFormData(props.initial);
+                    // setFormData(props.initial);
                 }}
             >
                 SUBMIT
