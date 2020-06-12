@@ -26,7 +26,8 @@ const Recipient = (props) => {
       }
 
     return (
-        <div>
+        <div className="recipients-page">
+            <h2>Your Recipients</h2>
             {editGift.recipient ? <Form handleSubmit={props.handleUpdate} initial={editGift}/> : ''}
             <ul>
                 {recipient ? recipient.map((recipient)=> {

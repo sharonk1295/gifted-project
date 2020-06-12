@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/style.scss';
-import Image from '../css/gift_img.png'
+import Image from '../css/gift_img2.png'
 
 const Splash = (props) => {
     return (

@@ -10,7 +10,7 @@
 }
 body {
     //background-color: rgba(108, 176, 240, 0.349);
-    background-color: rgba(121, 182, 240, 0.349);
+    background-color: rgba(121, 182, 240, 0.247);
 }
 
 // ======= SPLASH PAGE ======== // 
@@ -47,7 +47,7 @@ body {
             margin: 6vh;
             text-align: center;
             .img {
-                width: 65%;
+                width: 55%;
                 text-align: center;
                 // filter: invert(100%);
                 animation-name: spin;
@@ -74,7 +74,7 @@ body {
             font-weight: 600;
         };
         button:hover {
-            background-color: rgba(42, 108, 196, 0.76);
+            background-color: rgba(42, 140, 196, 0.76);
             color: whitesmoke;
             transform: scale(1.4, 1.4);
         }
@@ -141,6 +141,9 @@ body {
         font-size: 43px;
         //border: red 1px solid;
     };
+    // .card {
+    //     display: flex;
+    // }
     ol {
         margin-top: 3vh;
         font-size: 18px;
@@ -172,7 +175,13 @@ body {
     form {
         display: flex;
         flex-direction: column;
-        margin-top: 5vh;
+        margin: 4vh auto;
+        margin-bottom: 3vh;
+        background-image: url('../css/form_img.jpg');
+        background-position: center;
+        background-size: cover;
+        padding: 6vh 8vh;
+        border: whitesmoke 5px double;
         label {
             font-family: 'Poiret One', cursive;
             font-weight: bold;
@@ -182,13 +191,13 @@ body {
             margin-bottom: 7px;
         };
         button {
-            margin-top: 15px;
+            margin-top: 20px;
             font-family: 'Abhaya Libre', serif;
             font-weight: bold;
             font-size: 20px;
             background-color: rgb(154, 166, 231);
             outline: none;
-            border: none;
+            border: rgb(154, 166, 231) 1px solid;
             padding: 3px 8px;
         };
         button:hover {
@@ -196,5 +205,19 @@ body {
             transform: translate(3px, 2px);
             border: black 1px solid;
         }
+    }
+}
+
+// =========== RECIPIENTS PAGE =========== //
+.recipients-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+        font-family: 'Bellota', cursive;
+        font-size: 43px;
+    };
+    ul {
+        margin-top: 4vh;
     }
 }
