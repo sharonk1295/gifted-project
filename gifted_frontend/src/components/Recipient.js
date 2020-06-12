@@ -15,6 +15,7 @@ const Recipient = (props) => {
                             <button onClick={()=> {
                             props.handleDelete(recipient._id)
                         }}>Delete</button>
+                            <button>Update</button>
                         </li>
                     )
                 }): 'loading recipient'}

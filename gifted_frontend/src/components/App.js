@@ -30,12 +30,7 @@ const App = (props) => {
     setHomeToggle(false)
   }
 
-  // Home button
-  // const [homeToggle, setHomeToggle] = React.useState(true);
-  // const showHome = () => {
-  //   setHistoryToggle(false);
-  //   setFormToggle(false);
-  // }
+ 
 
   // For testing splash
   const [homeToggle, setHomeToggle] = React.useState(false);
@@ -89,14 +84,26 @@ const App = (props) => {
     getInfo()
   }
 
+  const handleUpdate = async (id)  => {
+    const response = await fetch(`http://localhost:3000/gifts/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(id)
+    })
+    getInfo();
+  }
+
+
+
   return splash ? <Splash hideSplash={hideSplash} /> : (
     <>
       <Header showForm= {addRecipientForm} showHistory={showHistory} showHome={showHome}/>
-      {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : 
-      ''}
-      {historyToggle ? <History gifts={recipients}/> 
+      {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : ''}
+      {historyToggle ? <History gifts={recipients}/>
       :
-      homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete}/> : ''}
+      homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete}handleUpdate={handleUpdate}/> : ''}
     </>
   )
 }
