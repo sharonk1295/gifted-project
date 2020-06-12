@@ -11,6 +11,13 @@ import Splash from './Splash';
 const App = (props) => {
 
   const [recipients, setRecipients] = React.useState();
+  const [editedRecipient, setEditRecipients] = React.useState({
+    recipient: '',
+    gift: '',
+    date: '',
+    occasion:''
+});
+
 
   //const [page, setPage] = React.useState()
 
@@ -88,13 +95,26 @@ const App = (props) => {
     }
   }
 
+  const handleDelete = async (id) => {
+    const response = await fetch(`http://localhost:3000/gifts/${id}`, {
+      method: 'DELETE'
+    })
+    getInfo()
+  }
+
+  const handleEdit = async (editedRecipient) => {
+    render 
+    setEditRecipients(editedRecipient);
+   
+};
+
   const handleUpdate = async (id)  => {
     const response = await fetch(`http://localhost:3000/gifts/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(recipient)
+      body: JSON.stringify(id)
     })
     getInfo();
   }
@@ -107,7 +127,7 @@ const App = (props) => {
       {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : ''}
       {historyToggle ? <History gifts={recipients}/>
       :
-      homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete}/> : ''}
+      homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete} handleSelect = {handleSelect} handleUpdate = {handleUpdate}/> : ''}
     </>
   )
 }
