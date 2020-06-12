@@ -42,7 +42,6 @@ const App = (props) => {
     setSplash(false);
     setHomeToggle(true)
   }
-  
 
   const blank = {
     recipient: '',
@@ -93,6 +92,13 @@ const App = (props) => {
     // getInfo();
     
   }
+
+  // const updateData = {
+  //   recipient: '',
+  //   gift: '',
+  //   date: '',
+  //   occasion:''
+  // }
 
   return splash ? <Splash hideSplash={hideSplash} /> : (
     <>

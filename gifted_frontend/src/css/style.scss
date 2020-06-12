@@ -1,11 +1,16 @@
 @import url('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">');
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Poiret+One&family=Cookie');
+// ======= FONTS ======== //
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Poiret+One&family=Cookie&family=Bellota&family=Abhaya+Libre');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body {
+    //background-color: rgba(108, 176, 240, 0.349);
+    background-color: rgba(121, 182, 240, 0.247);
 }
 
 // ======= SPLASH PAGE ======== // 
@@ -42,7 +47,7 @@
             margin: 6vh;
             text-align: center;
             .img {
-                width: 65%;
+                width: 55%;
                 text-align: center;
                 // filter: invert(100%);
                 animation-name: spin;
@@ -69,7 +74,7 @@
             font-weight: 600;
         };
         button:hover {
-            background-color: rgba(42, 108, 196, 0.76);
+            background-color: rgba(42, 140, 196, 0.76);
             color: whitesmoke;
             transform: scale(1.4, 1.4);
         }
@@ -91,7 +96,7 @@
         // align-items: center;
         h1 {
         color: rgb(85, 84, 84);
-        font-size: 120px;
+        font-size: 125px;
         font-family: 'Poiret One', cursive;
         font-weight: 700;
         letter-spacing: 4px;
@@ -100,7 +105,7 @@
         nav {
             display: flex;
             ul {
-                margin-left: 2vh;
+                margin-left: 1.5vh;
                 button {
                     margin: 4px;
                     padding: 4px 6px;
@@ -110,8 +115,9 @@
                     border: white 2px solid;
                     color: whitesmoke;
                     letter-spacing: 1px;
-                    font-family: 'Cookie', cursive;
-                    font-size: 20px;
+                    //font-family: 'Cookie', cursive;
+                    font-family: 'Abhaya Libre', serif;
+                    font-size: 18px;
                 };
                 button:hover {
                     background: rgb(236,239,242);
@@ -121,5 +127,127 @@
             }
         };
 
+    }
+}
+
+// ========= GIFT HISTORY ========== //
+.gift-history {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        font-family: 'Bellota', cursive;
+        font-size: 43px;
+        //border: red 1px solid;
+    };
+    // .card {
+    //     display: flex;
+    // }
+    ol {
+        margin-top: 3vh;
+        font-size: 18px;
+        li {
+            margin-bottom: 20px;
+            h2 {
+                font-family: 'Poiret One', cursive;
+                font-weight: bold;
+                margin-left: 5px;
+                color: rgb(20, 22, 163);
+            };
+            h5 {
+                font-family: 'Abhaya Libre', serif;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+// ========= ADD RECIPIENT ========== //
+.add-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+        font-family: 'Bellota', cursive;
+        font-size: 43px;
+    };
+    form {
+        display: flex;
+        flex-direction: column;
+        margin: 4vh auto;
+        margin-bottom: 3vh;
+        background-image: url('../css/form_img.jpg');
+        background-position: center;
+        background-size: cover;
+        padding: 6vh 8vh;
+        border: whitesmoke 5px double;
+        label {
+            font-family: 'Poiret One', cursive;
+            font-weight: bold;
+            font-size: 22px;
+        };
+        input {
+            margin-bottom: 7px;
+        };
+        button {
+            margin-top: 20px;
+            font-family: 'Abhaya Libre', serif;
+            font-weight: bold;
+            font-size: 20px;
+            background-color: rgb(154, 166, 231);
+            outline: none;
+            border: rgb(154, 166, 231) 1px solid;
+            padding: 3px 8px;
+        };
+        button:hover {
+            background-color: rgb(243, 219, 187);
+            transform: translate(3px, 2px);
+            border: black 1px solid;
+        }
+    }
+}
+
+// =========== RECIPIENTS PAGE =========== //
+.recipients-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+        font-family: 'Bellota', cursive;
+        font-size: 43px;
+    };
+    ul {
+        margin-top: 4vh;
+        h3 {
+            font-family: 'Poiret One', cursive;
+            font-weight: bold;
+            font-size: 34px;
+            margin-bottom: 10px;
+        };
+        li {
+            margin-bottom: 7px;
+        }
+        button {
+            margin: 1px 5px;
+            font-family: 'Abhaya Libre', serif;
+            font-weight: bold;
+            font-size: 20px;
+            background-color: rgb(154, 166, 231);
+            outline: none;
+            border: rgb(154, 166, 231) 1px solid;
+            border-radius: 3px;
+            padding: 3px 9px;
+        };
+        button:hover {
+            background-color: rgb(243, 219, 187);
+            transform: translate(3px, 2px);
+            border: black 1px solid;
+        }
+        .delete-btn:hover {
+            background-color: rgba(216, 17, 17, 0.815);
+            color: whitesmoke;
+            border: red 1px solid;
+        }
     }
 }
