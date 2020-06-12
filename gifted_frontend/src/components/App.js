@@ -90,14 +90,13 @@ const App = (props) => {
     getInfo();
   }
 
-
   return splash ? <Splash hideSplash={hideSplash} /> : (
     <>
       <Header showForm= {addRecipientForm} showHistory={showHistory} showHome={showHome}/>
       {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : ''}
-      {historyToggle ? <History gifts={recipients}/> 
+      {historyToggle ? <History gifts={recipients}/>
       :
-      homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete}/> : ''}
+      homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete} handleUpdate={handleUpdate}/> : ''}
     </>
   )
 }
