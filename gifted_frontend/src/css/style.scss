@@ -219,5 +219,35 @@ body {
     };
     ul {
         margin-top: 4vh;
+        h3 {
+            font-family: 'Poiret One', cursive;
+            font-weight: bold;
+            font-size: 34px;
+            margin-bottom: 10px;
+        };
+        li {
+            margin-bottom: 7px;
+        }
+        button {
+            margin: 1px 5px;
+            font-family: 'Abhaya Libre', serif;
+            font-weight: bold;
+            font-size: 20px;
+            background-color: rgb(154, 166, 231);
+            outline: none;
+            border: rgb(154, 166, 231) 1px solid;
+            border-radius: 3px;
+            padding: 3px 9px;
+        };
+        button:hover {
+            background-color: rgb(243, 219, 187);
+            transform: translate(3px, 2px);
+            border: black 1px solid;
+        }
+        .delete-btn:hover {
+            background-color: rgba(216, 17, 17, 0.815);
+            color: whitesmoke;
+            border: red 1px solid;
+        }
     }
 }

@@ -34,8 +34,8 @@ const Recipient = (props) => {
                     return(
                         
                         <li key ={recipient._id}>
-                            <h1>{recipient.recipient}</h1>
-                            <button onClick={()=> {
+                            <h3>{recipient.recipient}</h3>
+                            <button className="delete-btn" onClick={()=> {
                             props.handleDelete(recipient._id)
                         }}>Delete</button>
                             <button onClick={() => {
