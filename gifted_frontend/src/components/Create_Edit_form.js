@@ -14,7 +14,9 @@ const Form = (props) => {
     return (
         <div className="add-form">
             <h2>Who Will You Be Gifting Next?</h2>
-            <form onSubmit={() => {props.handleSubmit(formData)}} className="form">
+            <form 
+            // onSubmit={() => {props.handleSubmit(formData)}} 
+            className="form">
                 <label>Recipient</label>
                 <input 
                 type="text" 
