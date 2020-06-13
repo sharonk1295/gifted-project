@@ -10,6 +10,13 @@ import Splash from './Splash';
 const App = (props) => {
 
   const [recipients, setRecipients] = React.useState();
+  const [editedRecipient, setEditRecipients] = React.useState({
+    recipient: '',
+    gift: '',
+    date: '',
+    occasion:''
+});
+
 
 
   // Use to render Form from our navbar
@@ -68,8 +75,7 @@ const App = (props) => {
       },
       body: JSON.stringify(recipient)
     })
-    // getInfo();
-    hideSplash()
+    getInfo();
   }
 
   const handleDelete = async (id) => {
@@ -88,9 +94,7 @@ const App = (props) => {
       },
       body: JSON.stringify(data)
     })
-    console.log(data)
     // getInfo();
-    
   }
 
   // const updateData = {
