@@ -11,7 +11,7 @@ const Header = (props) => {
                     <ul>
                         <button onClick={() => {
                             console.log('test')
-                            props.hideHome()
+                            props.showHome()
                         }}>Home</button>
                         <button onClick={() => {
                             console.log('test')

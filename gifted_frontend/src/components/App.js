@@ -1,17 +1,16 @@
 import React from "react";
 import "../css/style.scss";
-// import Form from '../components/Create_Edit_form'
 
 import Header from './Header';
 import Form from './Create_Edit_form';
 import History from './Gift_History';
 import Recipient from './Recipient';
+import Splash from './Splash';
 
 const App = (props) => {
 
   const [recipients, setRecipients] = React.useState();
 
-  //const [page, setPage] = React.useState()
 
   // Use to render Form from our navbar
   const [formToggle, setFormToggle] = React.useState(false);
@@ -25,16 +24,23 @@ const App = (props) => {
   const [historyToggle, setHistoryToggle] = React.useState(false);
   const showHistory = () => {
     setHistoryToggle(true);
-    setFormToggle(false)
-    setHomeToggle(false);
+    setFormToggle(false);
+    setHomeToggle(false)
   }
 
-  // Home button
-  const [homeToggle, setHomeToggle] = React.useState(true);
-  const hideHome = () => {
+  // For testing splash
+  const [homeToggle, setHomeToggle] = React.useState(false);
+  const showHome = () => {
     setHomeToggle(true);
+    setHistoryToggle(false);
     setFormToggle(false);
-    setHistoryToggle(false)
+  }
+
+  // For Splash page
+  const [splash, setSplash] = React.useState(true);
+  const hideSplash = () => {
+    setSplash(false);
+    setHomeToggle(true)
   }
 
   const blank = {
@@ -62,59 +68,47 @@ const App = (props) => {
       },
       body: JSON.stringify(recipient)
     })
-    getInfo();
+    // getInfo();
+    hideSplash()
   }
-  // const showPage = () => {
-  //   if (homeToggle) {
-  //     setFormToggle(formToggle === false);
-  //     setHistoryToggle(historyToggle ===false);
-  //     return <Recipient recipient={recipients}/>
-  // } else if (historyToggle) {
-  //     setHomeToggle(homeToggle ===false);
-  //     setFormToggle(formToggle ===false);
-  //     return <History gifts={recipients}/>
-  // } else if (formToggle) {
-  //     setHomeToggle(homeToggle ===false);
-  //     setHistoryToggle(historyToggle === false);
-  //     return <Form initial={blank} handleSubmit={handleCreate}/>
-  // } else {
-  //     return <Recipient recipient={recipients}/>
-  //   }
-  // }
-  // React.useEffect(() => {
-  //   showPage();
-  // }, []);
 
-  return (
+  const handleDelete = async (id) => {
+    const response = await fetch(`http://localhost:3000/gifts/${id}`, {
+      method: 'DELETE'
+    })
+    getInfo()
+  }
+
+  const handleUpdate = async (data)  => {
+    console.log(data)
+    const response = await fetch(`http://localhost:3000/gifts/${data._id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    console.log(data)
+    // getInfo();
+    
+  }
+
+  // const updateData = {
+  //   recipient: '',
+  //   gift: '',
+  //   date: '',
+  //   occasion:''
+  // }
+
+  return splash ? <Splash hideSplash={hideSplash} /> : (
     <>
-      <Header showForm= {addRecipientForm} showHistory={showHistory} hideHome={hideHome}/>
-      {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : 
-      ''}
-      {historyToggle ? <History gifts={recipients} /> 
+      <Header showForm= {addRecipientForm} showHistory={showHistory} showHome={showHome}/>
+      {formToggle ? <Form initial={blank} handleSubmit={handleCreate}/> : ''}
+      {historyToggle ? <History gifts={recipients}/>
       :
-      homeToggle? <Recipient recipient={recipients}/> : ''}
-      {/* {showPage()} */}
-      {/* {(() => {
-        if (homeToggle) {
-          setFormToggle(formToggle === false);
-          setHistoryToggle(historyToggle ===false);
-          return <Recipient recipient={recipients}/>
-      } else if (historyToggle) {
-          setHomeToggle(homeToggle ===false);
-          setFormToggle(formToggle ===false);
-          return <History gifts={recipients}/>
-      } else if (formToggle) {
-          setHomeToggle(homeToggle ===false);
-          setHistoryToggle(historyToggle === false);
-          return <Form initial={blank} handleSubmit={handleCreate}/>
-      } else {
-          return <Recipient recipient={recipients}/>
-        }
-      })()} */}
+      homeToggle? <Recipient recipient={recipients} handleDelete={handleDelete} handleUpdate={handleUpdate}/> : ''}
     </>
   )
 }
 
 export default App;
-
-
